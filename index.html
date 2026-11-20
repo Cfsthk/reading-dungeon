@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#11151b"><title>深燈地牢</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23d9b36b' d='M8 4h16v24H8z'/%3E%3Cpath fill='%2311151b' d='M12 8h8v20h-8z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="dungeon.css?v=dungeon-v20">
+</head>
+<body>
+<main class="dungeon at-entrance" id="game">
+  <section class="chamber" id="chamber" aria-label="地牢房間">
+    <canvas id="room" width="960" height="640" aria-hidden="true"></canvas>
+    <header class="hud">
+      <h1 class="location" id="area-name">地牢入口</h1>
+      <div class="clock" id="clock" role="timer" hidden aria-label="守衛倒數 03:00"><canvas class="clock-mark" data-sprite="27" width="24" height="24" aria-hidden="true"></canvas><span id="time">03:00</span><span class="hud-gain timer-gain" id="timer-gain" hidden aria-hidden="true">+3s</span></div>
+      <div class="wallet"><canvas data-sprite="23" width="32" height="32" aria-hidden="true"></canvas><span id="coins">0</span><span class="hud-gain coin-gain" id="coin-gain" hidden aria-hidden="true"><canvas id="coin-gain-icon" data-sprite="23" width="24" height="24" aria-hidden="true"></canvas><span id="coin-gain-value"></span></span></div>
+      <button id="pause" class="icon-button" type="button" aria-label="暫停" title="暫停">Ⅱ</button>
+      <div class="hearts" id="hearts" aria-label="3 顆心"></div>
+    </header>
+    <div class="routes" id="routes" role="group" aria-describedby="prompt" aria-label="選擇通道"></div>
+    <button class="entrance-gate" id="entrance-gate" type="button" aria-label="進入地牢" hidden></button>
+    <div class="guardian" id="guardian" hidden><span id="guardian-name"></span><div id="seals" aria-label="封印"></div></div>
+    <div class="chapter-flash" id="chapter-flash" aria-hidden="true"></div>
+    <div class="loading" id="loading" role="status">點亮地牢…</div>
+    <div class="injury" aria-hidden="true"></div>
+    <div class="curtain" aria-hidden="true"></div>
+  </section>
+  <section class="reading" aria-label="當前線索">
+    <div class="reading-top"><span id="chapter">門前石碑</span><span id="quest-step" class="quest-step" hidden></span></div>
+    <p id="prompt" tabindex="-1"></p>
+    <ol id="boss-plan" class="boss-plan" hidden></ol>
+    <p class="hint" id="hint" hidden></p>
+    <div class="reading-bottom"><div class="story-progress" id="story-progress" aria-label="區域探索進度"></div><span id="boss-step" class="boss-step" hidden></span><span id="reading-mark" class="reading-mark" aria-hidden="true">◆</span></div>
+  </section>
+  <p class="sr-only" id="announcement" aria-live="polite"></p>
+</main>
+<audio id="dungeon-music" src="assets/dungeon/lantern-hop.wav?v=dungeon-v20" data-boss-track="assets/dungeon/guardian-chase.wav?v=dungeon-v20" preload="none" loop hidden></audio>
+<dialog id="pause-dialog" aria-labelledby="pause-title">
+  <div class="dialog-emblem" aria-hidden="true">Ⅱ</div>
+  <h2 id="pause-title">暫停</h2>
+  <button id="resume" class="primary" type="button">繼續探索</button>
+  <button id="music" type="button" aria-label="背景音樂" aria-pressed="true">音樂　開</button>
+  <button id="sound" type="button" aria-label="遊戲音效" aria-pressed="true">音效　開</button>
+  <button id="finish" type="button">結束本次</button>
+</dialog>
+<dialog id="end-dialog" aria-labelledby="end-title"><canvas id="end-icon" width="64" height="64" aria-hidden="true"></canvas><p class="end-eyebrow" id="end-eyebrow">本次探索</p><h2 id="end-title">燈火熄滅</h2><p id="story-ending" class="story-ending"></p><div class="run-stats"><div><strong id="end-rooms">0</strong><span>房間</span></div><div><strong id="end-time">0</strong><span>逃出競技場</span></div><div><strong id="end-coins">0</strong><span>寶箱金幣</span></div></div><button id="restart" class="primary" type="button">再入地牢</button></dialog>
+<script src="dungeon-lessons.js?v=dungeon-v20"></script><script src="dungeon-obstacles.js?v=dungeon-v20"></script><script src="dungeon-content.js?v=dungeon-v20"></script><script src="dungeon-learning.js?v=dungeon-v20"></script><script src="dungeon-engine.js?v=dungeon-v20"></script><script src="dungeon-art.js?v=dungeon-v20"></script><script src="dungeon-sfx.js?v=dungeon-v20"></script><script src="dungeon-app.js?v=dungeon-v20"></script>
+</body></html>

@@ -1,0 +1,42 @@
+# Dungeon expedition — revision 16
+
+The doorway itself is the entrance control. The HUD shows the area, hearts, countdown, wallet and pause control. The room clue sits below the playfield.
+
+The entrance is a safe camp outside the eight areas. One gate opens into a seeded first area. Click or keyboard activation crosses the threshold. Waiting in camp has no effect on the run, and the crossing gives no room credit. Restarting returns to camp. Reloading restores the phase the pupil had reached.
+
+The area supplies scenery, occupants and a local purpose for each reading task. The first visit has eight to ten rooms. Later visits have nine to eleven. The first two rooms of a fresh run draw from harmless single-action mechanisms. Subsequent rooms can ask pupils to find a witness, collect a delivery, inspect a crossing, identify a genuine chest, dispatch a cart or operate a mechanism. A seed fixes the choices for a saved room. At the area boundary a correct checkpoint earns a visit-specific seal. In the following room, the correct keeper interprets the seal. The pupil uses that information to identify the door to a randomly selected different area.
+
+Each stage shows one current instruction. In a two-step room, the source and action targets share the same playfield from entry to exit. Only the current group accepts input. The source reveals the second instruction on contact. The explorer stays at that source while the pupil reads, including after reload. The first action gives no room credit, coins or timer bonus. The visible clues together identify one target. Cart dispatch replaces the route-fork card. Treasure encounters stay in the shuffled deck. All reward boxes look closed before the choice. Opening the correct one awards one coin, plus one for each ten previously cleared rooms, up to five. The gain appears beside the run score.
+
+Ordinary-room doors sit on the wall-to-floor seam. Each obstacle map supplies both landing heights. The bridge deck or ladder rungs connect those heights, and the same coordinates guide the explorer during approach, crossing and recovery.
+
+Movement: place people and objects beside the lane and let the explorer interact from a clear space. People and items have a brief contact beat. Working mechanisms show their response from a safe adjacent stop. Correct doors use one continuous, constant-speed path. The explorer returns to the original position after a surviving non-exit arena action. The final correct door leaves the arena. A wrong door turns the explorer back without a cost at every stage.
+
+Consequences: the chosen target determines the result. A wrong person strikes, a mimic opens and bites, and an ordinary wrong item triggers a trap. Each removes one heart. A wrong ladder breaks and drops the explorer to the lower floor for one heart; a wrong bridge collapses into the chasm and ends the run regardless of remaining hearts. Both crossings start intact. Show the attack or fall before presenting the ending. Do not use a generic late-stage fatal mistake rule or spend extra hearts for a retry of an already collapsed ladder.
+
+Arena: finish the current room before a due boss replaces the next one. All three escape instructions and nine fixed targets are visible. Find the ally, select the seal item, leave through the correct door. Wrong or out-of-order choices use the selected target’s regular consequence (thus choosing a locked door is free). The upper-centre guardian fires 224px shots at the explorer’s hood position at launch. Shots keep their angle, take two active seconds and are followed by five seconds of cooldown. A hit costs one heart and a dodge costs nothing. The guardian’s attack is independent of the pupil’s reading choice. Resolve collision before committing an exit.
+
+Timing: crossing the camp threshold starts a 180-second boss countdown. Each completed ordinary room delays the boss by three seconds and displays `+3s` beside the timer. Once zero is reached, the boss waits behind the next successful exit. Its attack clock runs independently during the encounter. A successful escape starts a fresh 180-second countdown measured from the instant of escape. No prior room bonuses, overdue arrivals or time spent fighting carry over. Neither intermediate boss steps nor the final escape add three seconds. Pausing or switching away freezes active time.
+
+Later scenes add reading conditions and later arenas shorten the initial reading window. Target-specific damage stays fixed. The pupil’s learning history persists into a new run with zero coins. Save migration accepts supported older saves through the previous dungeon release, including an unfinished room or a pending chest payout. The older total is reduced to the amount earned in the current run. A previously paid legacy door cannot generate another payout. Mid-run reload preserves active boss instructions, processed impacts and available timing evidence without repeating them.
+
+## Reading progression
+
+The reading model supports three starting bands, including bands retained from saved profiles. A pupil’s first independent choice supplies evidence about one target word. Retries and arena events are excluded. A near miss that satisfies the word and misses another condition is neutral. Learners share a pool of authored Chinese situations with local variants in eight areas. Room generation checks that each essential condition has a matching near miss and exactly one option meets all conditions.
+
+The target selector apportions eligible draws between practising words (50%), due reviews (30%) and new words (20%). It reallocates the weight of empty groups to available groups and gives struggling words extra weight within practice. The profile tracks each word independently. Two recent misses in three assessed attempts lower the band. Five successes out of six in at least three different situations raise it. Promoted words wait eight independent reading opportunities before a review. Starting bands affect unfamiliar words. Anonymous profiles and run state are stored locally in the browser.
+
+## Working mechanisms
+
+A seeded activity pool mixes working mechanisms and blocked paths with people, crossings and retrievals. Later rooms continue to draw from the regional encounter pool. Sluices raise a gate and release water, a single obstructing minecart moves sideways on the track when its release lever is pulled, and signal drums turn and relay the signal. Their control fittings can vary in colour, number of lit lamps, placement and ribbon. One click selects a target. A wrong setting animates, costs no hearts and permits an immediate retry. These encounters never pay coins.
+
+
+## Blocked paths
+
+A beast, a flooded channel or a halted minecart blocks the way to the northern doorway. Trays or levers near the explorer become selectable when their instruction is visible. After one choice the explorer stops beside that control. The obstacle reacts, and on success the explorer walks through the opened route automatically. A failed attempt plays out and returns the player to their starting position. Hearts, coins and the room-clear bonus change only under the existing award and hazard rules.
+
+Beginning readers receive a direct instruction and two visually comparable controls. Once familiar, a previously recognised target word can return in a short practice clue. Newer rooms continue to offer brief single-condition instructions at the middle and upper bands. Three-choice rooms give independent evidence for a colour or referent and a second detail such as a bell or basin state. Inference rooms and simple actions can play without assigning word evidence. The original scene is retained when restoring a previous-version save.
+
+## Exit and checkpoint states
+
+All scene exit leaves begin shut. In a door-reading room, only the chosen correct door opens. Mounted machines unlock a single exit after a successful button press. A dispatch room keeps the exit closed until the selected cart moves along its horizontal rail. A passive exit opens after the item, conversation, crossing or operation succeeds. The first two arena steps leave the doors shut. At a checkpoint the seal indicator fills when the explorer succeeds. It stays filled for the boundary door reading. The room generator retains the twelve-activity bag cursor through vaults and area transitions. Revision 13 journeys finish the area whose plan was saved before they draw from the new bag.
